@@ -17,9 +17,7 @@ function App() {
     <div className="grid-container">
     <header className="header">
       <div className="brand">
-        <button className="sidebar-open-button" onCLick= {openMenu} >
-          &#9776;
-        </button>
+      <button onClick={openMenu}> &#9776; </button>
         <a href="index.html">ShopStop</a>
       </div>
       <div className="header-links">
