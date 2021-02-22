@@ -1,7 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
 import './index.css';
 import data from './data';
+import {BrowserRouter, Route} from 'react-router-dom';
+import HomeScreen from './Screens/HomeScreen';
+import ProductScreen from './Screens/ProductScreen';
 
 function App() {
 
@@ -15,6 +17,7 @@ function App() {
 
   return (
 
+    <BrowserRouter>
     <div className="grid-container">
     <header className="header">
       <div className="brand">
@@ -40,6 +43,8 @@ function App() {
     </aside>
     <main className="main">
       <div className="content">
+        <Route path = "/product/:id" component = {ProductScreen} /> 
+        <Route path = "/" exact = {true} component = {HomeScreen} />
         <ul className="products">
           {
             data.products.map(product => 
@@ -61,7 +66,9 @@ function App() {
       Footer
     </footer>
   </div>
+  </BrowserRouter>
   );
 }
+
 
 export default App;
